@@ -3,7 +3,7 @@ import java.util.Scanner;
 class BankAccount {
     private double balance;
 
-    // Constructor to initialize the account with an initial balance
+    // Constructor to initialize the account with some balance
     public BankAccount(double initialBalance) {
         if (initialBalance < 0) {
             System.out.println("Initial balance cannot be negative. Setting balance to 0.");
@@ -13,12 +13,12 @@ class BankAccount {
         }
     }
 
-    // Method to get the current balance
+    // Method to get current balance
     public double getBalance() {
         return balance;
     }
 
-    // Method to deposit money into the account
+    // Method to deposit money into account
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -28,7 +28,7 @@ class BankAccount {
         }
     }
 
-    // Method to withdraw money from the account
+    // Method to withdraw money from account
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
@@ -47,12 +47,12 @@ class BankAccount {
 class ATM {
     private BankAccount account;
 
-    // Constructor to associate an ATM with a BankAccount
+    // Constructor to associate an ATM withBankAccount
     public ATM(BankAccount account) {
         this.account = account;
     }
 
-    // Method to display the ATM menu and process user input
+    // Method to display ATM menu and process input
     public void start() {
         Scanner s = new Scanner(System.in);
         while (true) {
@@ -92,8 +92,8 @@ class ATM {
 
 public class ATMInterface {
     public static void main(String[] args) {
-        // Initialize a BankAccount with an initial balance
-        BankAccount userAccount = new BankAccount(500.0); // Starting with $500
+        // Initialize a BankAccount with an somme balance
+        BankAccount userAccount = new BankAccount(500.0); // Starting with 500
 
         // Create an ATM instance associated with the user's account
         ATM atm = new ATM(userAccount);
