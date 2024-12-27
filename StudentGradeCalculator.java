@@ -2,12 +2,13 @@ import java.util.Scanner;
 
 public class StudentGradeCalculator {
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
         // Input: Number of subjects
         System.out.print("Enter the number of subjects: ");
-        int numSubjects = scanner.nextInt();
+        int numSubjects = s.nextInt();
 
         // Array to store marks for each subject
         int[] marks = new int[numSubjects];
@@ -17,7 +18,7 @@ public class StudentGradeCalculator {
         System.out.println("Enter marks obtained (out of 100) for each subject:");
         for (int i = 0; i < numSubjects; i++) {
             System.out.print("Subject " + (i + 1) + ": ");
-            marks[i] = scanner.nextInt();
+            marks[i] = s.nextInt();
             totalMarks += marks[i];
         }
 
@@ -44,6 +45,6 @@ public class StudentGradeCalculator {
         System.out.println("Average Percentage: " + averagePercentage + "%");
         System.out.println("Grade: " + grade);
 
-        scanner.close();
+        s.close();
     }
 }
